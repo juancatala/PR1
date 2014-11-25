@@ -11,8 +11,19 @@ namespace JuanC.Programacion.Eval1.Juego.CUI
     {
         static void Main(string[] args)
         {
-            int secreto = ModeloJuego.SecretoDeLaVida();
-            Console.WriteLine("El secreto de la vida es:" + secreto);
+            ConsoleKeyInfo dirc;
+            ModeloJuego.Anadir(2);
+            ModeloJuego.Mostrar();
+            bool partida = true;
+            while (partida)
+            {
+                dirc = Console.ReadKey();
+                Console.Clear();
+                ModeloJuego.Direccion(dirc);
+                ModeloJuego.Anadir(1);
+                //Console.WriteLine(dirc.Key.ToString());
+                ModeloJuego.Mostrar();
+            }
             Console.ReadKey();
         }
     }
