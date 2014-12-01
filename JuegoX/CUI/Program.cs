@@ -22,8 +22,20 @@ namespace JuanC.Programacion.Eval1.Juego.CUI
                 ModeloJuego.Direccion(dirc);
                 ModeloJuego.Anadir(1);
                 //Console.WriteLine(dirc.Key.ToString());
-                ModeloJuego.Mostrar();
+                bool resultado=ModeloJuego.Mostrar();
+                bool perder = ModeloJuego.BuscarSumas();
+                if (perder)
+                {
+                    Console.WriteLine("No hay mas movimientos posibles, has perdido.");
+                    break;
+                }
+                if (resultado) 
+                {
+                    Console.WriteLine("Has conseguido 2048 puntos en una sola casilla, felicidades!");
+                    break; 
+                }
             }
+            
             Console.ReadKey();
         }
     }
